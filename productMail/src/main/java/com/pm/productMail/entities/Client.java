@@ -1,4 +1,4 @@
-package com.pm.productMail.entites;
+package com.pm.productMail.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
