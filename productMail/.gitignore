@@ -1,5 +1,8 @@
 HELP.md
 target/
+java/com/pm/productMail/batch
+java/com/pm/productMail/data
+java/com/pm/productMail/services
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
