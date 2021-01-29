@@ -1,0 +1,17 @@
+com\pm\productMail\batch\processors\ProductProcessor.class
+com\pm\productMail\services\MailSenderImpl.class
+com\pm\productMail\dao\ClientRepository.class
+com\pm\productMail\ProductMailApplication.class
+com\pm\productMail\data\Loader.class
+com\pm\productMail\services\utils\AbstractTask.class
+com\pm\productMail\batch\configs\BatchConfig.class
+com\pm\productMail\batch\writers\ProductWriter.class
+com\pm\productMail\dao\EmailRepository.class
+com\pm\productMail\entities\State.class
+com\pm\productMail\services\utils\MailSenderTask.class
+com\pm\productMail\entities\Client.class
+com\pm\productMail\dao\ProductRepository.class
+com\pm\productMail\services\MailSender.class
+com\pm\productMail\entities\EmailEntity.class
+com\pm\productMail\entities\Product.class
+com\pm\productMail\batch\mappers\ProductRowMapper.class

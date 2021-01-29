@@ -1,0 +1,17 @@
+C:\Formations\Product-mail-batch\productMail\src\main\java\com\pm\productMail\services\MailSender.java
+C:\Formations\Product-mail-batch\productMail\src\main\java\com\pm\productMail\batch\configs\BatchConfig.java
+C:\Formations\Product-mail-batch\productMail\src\main\java\com\pm\productMail\dao\ClientRepository.java
+C:\Formations\Product-mail-batch\productMail\src\main\java\com\pm\productMail\ProductMailApplication.java
+C:\Formations\Product-mail-batch\productMail\src\main\java\com\pm\productMail\services\utils\AbstractTask.java
+C:\Formations\Product-mail-batch\productMail\src\main\java\com\pm\productMail\dao\EmailRepository.java
+C:\Formations\Product-mail-batch\productMail\src\main\java\com\pm\productMail\services\MailSenderImpl.java
+C:\Formations\Product-mail-batch\productMail\src\main\java\com\pm\productMail\batch\mappers\ProductRowMapper.java
+C:\Formations\Product-mail-batch\productMail\src\main\java\com\pm\productMail\batch\writers\ProductWriter.java
+C:\Formations\Product-mail-batch\productMail\src\main\java\com\pm\productMail\entities\EmailEntity.java
+C:\Formations\Product-mail-batch\productMail\src\main\java\com\pm\productMail\entities\Product.java
+C:\Formations\Product-mail-batch\productMail\src\main\java\com\pm\productMail\data\Loader.java
+C:\Formations\Product-mail-batch\productMail\src\main\java\com\pm\productMail\entities\State.java
+C:\Formations\Product-mail-batch\productMail\src\main\java\com\pm\productMail\services\utils\MailSenderTask.java
+C:\Formations\Product-mail-batch\productMail\src\main\java\com\pm\productMail\dao\ProductRepository.java
+C:\Formations\Product-mail-batch\productMail\src\main\java\com\pm\productMail\batch\processors\ProductProcessor.java
+C:\Formations\Product-mail-batch\productMail\src\main\java\com\pm\productMail\entities\Client.java
