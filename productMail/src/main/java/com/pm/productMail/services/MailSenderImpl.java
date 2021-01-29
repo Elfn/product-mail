@@ -46,25 +46,56 @@ public class MailSenderImpl implements MailSender{
         //Configurer l'envoi du mail avec un mimeMessageHelper
         MimeMessageHelper helper = new MimeMessageHelper(message);
 
-        Client client = this.clientRepository.findById(product.getClient().getId()).get();
 
-        String mailSubject =  client.getFirstName()+" "+client.getLastName()  +  ", votre alerte d'expiration de produit";
-        String mailContent = "<p><b> Sender name: </b> " +client.getFirstName()+" "+client.getLastName() + "</p>";
-        mailContent += "<p><b> Sender email: </b> " + fromAddr + "</p>";
-        mailContent += "<p><b> Subject: </b> " + mailSubject + "</p>";
-        mailContent += "<p><b> Content: </b> " + "Le produit "+ product.getName() +" ("+product.getSerialNumber()+") vient d'expirer" + "</p>";
 
-        emailEntity.setSubject(mailSubject);
-        emailEntity.setFromAddr(fromAddr);
-        emailEntity.setToAddr(client.getEmail());
-        emailEntity.setContent(mailContent);
-        emailEntity.setSendingDate(new Date());
+        if(product.getState() == "ALMOSTEXPIRED") {
+            Client client = this.clientRepository.findById(product.getClient().getId()).get();
+            String mailSubject = client.getFirstName() + " " + client.getLastName() + ", votre alerte d'expiration de produit";
+            String mailContent = "<p><b> Sender name: </b> " + client.getFirstName() + " " + client.getLastName() + "</p>";
+            mailContent += "<p><b> Sender email: </b> " + fromAddr + "</p>";
+            mailContent += "<p><b> Subject: </b> " + mailSubject + "</p>";
+            mailContent += "<p><b> Content: </b> " + "Le produit " + product.getName() + " (" + product.getSerialNumber() + ") expire dans 5 jours" + "</p>";
 
-        helper.setTo(emailEntity.getToAddr());
-        helper.setSubject(emailEntity.getSubject());
-        helper.setText(emailEntity.getContent());
-        helper.setFrom(emailEntity.getFromAddr(),"My");
-        helper.setText(emailEntity.getContent(), true);
+            emailEntity.setSubject(mailSubject);
+            emailEntity.setFromAddr(fromAddr);
+            emailEntity.setToAddr(client.getEmail());
+            emailEntity.setContent(mailContent);
+            emailEntity.setSendingDate(new Date());
+            emailEntity.setClient(product.getClient());
+
+            helper.setTo(emailEntity.getToAddr());
+            helper.setSubject(emailEntity.getSubject());
+            helper.setText(emailEntity.getContent());
+            helper.setFrom(emailEntity.getFromAddr(),"My");
+            helper.setText(emailEntity.getContent(), true);
+
+        }
+
+        if(product.getState() == "EXPIRED") {
+            Client client = this.clientRepository.findById(product.getClient().getId()).get();
+            String mailSubject = client.getFirstName() + " " + client.getLastName() + ", votre alerte d'expiration de produit";
+            String mailContent = "<p><b> Sender name: </b> " + client.getFirstName() + " " + client.getLastName() + "</p>";
+            mailContent += "<p><b> Sender email: </b> " + fromAddr + "</p>";
+            mailContent += "<p><b> Subject: </b> " + mailSubject + "</p>";
+            mailContent += "<p><b> Content: </b> " + "Le produit " + product.getName() + " (" + product.getSerialNumber() + ") vient d'expirer" + "</p>";
+
+            emailEntity.setSubject(mailSubject);
+            emailEntity.setFromAddr(fromAddr);
+            emailEntity.setToAddr(client.getEmail());
+            emailEntity.setContent(mailContent);
+            emailEntity.setSendingDate(new Date());
+            emailEntity.setClient(product.getClient());
+
+            helper.setTo(emailEntity.getToAddr());
+            helper.setSubject(emailEntity.getSubject());
+            helper.setText(emailEntity.getContent());
+            helper.setFrom(emailEntity.getFromAddr(),"My");
+            helper.setText(emailEntity.getContent(), true);
+
+        }
+
+
+
 
         this.emailRepository.save(emailEntity);
 

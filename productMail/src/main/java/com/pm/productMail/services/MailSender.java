@@ -9,4 +9,5 @@ import java.io.UnsupportedEncodingException;
 public interface MailSender {
 
     public void send(EmailEntity emailEntity, Product product) throws MessagingException, UnsupportedEncodingException;
+
 }
