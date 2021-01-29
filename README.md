@@ -1,7 +1,7 @@
 # product-mail
 
 
-*SPRING BATCH 
+*SPRING BATCH   
 *SPING MAIL   
 *SPRING DATA JPA  
 *POSTGRES  
