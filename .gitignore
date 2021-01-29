@@ -1,5 +1,5 @@
 HELP.md
-#target/
+target/
 productMail/src/main/java/com/pm/productMail/batch/
 productMail/src/main/java/com/pm/productMail/data/
 productMail/src/main/java/com/pm/productMail/services/
