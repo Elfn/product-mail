@@ -5,6 +5,9 @@ import com.pm.productMail.entities.State;
 import org.springframework.batch.item.ItemProcessor;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 public class ProductProcessor implements ItemProcessor<Product, Product> {
@@ -16,8 +19,13 @@ public class ProductProcessor implements ItemProcessor<Product, Product> {
         String date1 = format.format(item.getExpirationDate());
         String date2 = format.format(new Date());
 
+        LocalDate ld1 = item.getExpirationDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        LocalDate ld2 = new Date().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        
+        long daysBetween = ChronoUnit.DAYS.between(ld1, ld2);
 
-        boolean isExpired = (date1.compareTo(date2) == 0) ? true : false;
+
+        boolean isExpired = ((date1.compareTo(date2) == 0) || (daysBetween == 5)) ? true : false;
 
         if(isExpired){
             item.setState((State.EXPIRED).toString());
